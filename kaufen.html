@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trinkflaschen Vergleichsseite</title>
+    <meta name="description" content="Erfahre hier alles über die besten Trinkflaschen auf dem Markt und finde die perfekte Flasche für deine Bedürfnisse.">
+  <meta name="keywords" content="Trinkflasche, Vergleich, Empfehlung, Wasserflasche, Outdoor, Sport, Reisen">
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="Icon_Trinkflasche.png">
+    <style>
+    body {
+       font-family: Arial, sans-serif;
+       margin: 0;
+       padding-left: 8px;
+       background-color:       #E6E0F8;
+
+     }
+
+
+
+     h2{
+       position: relative;
+       font-size: 4em;
+       letter-spacing: 24px;
+       color: #0e3742;
+       text-transform: uppercase;
+       width: 100%;
+       text-align: center;
+       -webkit-box-reflect: below 1px
+     	linear-gradient (transparent, #0008);
+       line-height: 0.70em;
+       outline: none;
+       animation: animate 5s linear infinite;
+
+     }
+
+     @keyframes animate {
+       0%,18%,20%,50.1%,60%,65.1%,80%, 90.1%, 92%{
+         color:  #FAFAFA;
+         text-shadow: none;
+       }
+       18.1%,20.1%,30%,50%,60.1%,65%,80.1%,90%,92.1%,100%{
+         color:#AC58FA;
+         text-shadow: 0 0 10px #AC58FA,
+         0 0 20px#AC58FA,
+         0 0 40px #AC58FA,
+         0 0 80px#AC58FA,
+         0 0 160px black;
+       }
+
+     }
+
+
+
+ h1 {
+   text-align: center;
+   font-size: 36px;
+   margin-top: 50px;
+   font-family: Georgia
+   ;
+ }
+
+ nav {
+   text-align: center;
+ }
+ nav a {
+   text-decoration: none;
+   color: black;
+   margin: 10px;
+ }
+
+ .container {
+   display: flex;
+ }
+ .container img {
+   width: 30%;
+   margin-right: 20px;
+   margin-bottom: 20px;
+ }
+
+ .info {
+   width: 70%;
+   padding-right:50px;
+ }
+
+ footer {
+   background-color: #f1f1f1;
+   text-align: center;
+   padding: 20px;
+ }
+ footer a {
+   color: black;
+   text-decoration: none;
+   margin: 0 10px;
+ }
+
+
+
+ nav {
+ display: flex;
+ justify-content: space-between;
+}
+nav li {
+ display: inline-block;
+}
+ nav a {
+   text-decoration: none;
+   color: black;
+   border: none;
+   border-radius: 18px;
+   margin: 10px;
+   padding: 10px;
+display: block;
+ }
+ nav a:hover {
+   color: black;
+     background-color: #A4A4A4;
+ }
+ nav a:hover::after {
+   content: "";
+   display: block;
+   border-bottom: 2px ;
+   width: 100%;
+
+ }
+ nav a.active::after {
+   content: "";
+   display: block;
+   border-bottom: 2px solid  #AC58FA;
+   width: 100%;
+    background-color: black;
+ }
+ nav a.active {
+background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+ nav ul {
+list-style: none;
+}
+
+
+
+
+
+
+img {
+/* Proportional zur Breite wird die Höhe automatisch angepasst */
+  border-radius: 10px; /* Ecken der Bilder werden abgerundet */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+
+
+
+}
+
+
+
+.bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #FAFAFA;
+  transition: all 1s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+animation: rise 0.2s linear;
+}
+
+@keyframes rise {
+from {
+transform: translateY(0);
+}
+to {
+transform: translateY(-100%);
+}
+}
+
+
+
+
+
+.speech-bubble {
+ position: relative;
+ padding: 15px;
+ margin-right: 15px;
+ margin-bottom: 15px;
+ background-color: #E2A9F3;
+ border-radius: 10px;
+ box-shadow: 20px 12px 12px rgba(0,0,0,0.15);
+}
+
+
+.speech-bubble::before {
+ content: "";
+ position: absolute;
+ bottom: 100%;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 0;
+ height: 0;
+ border: 10px solid white;
+ border-bottom-color: transparent;
+ border-top: 0;
+ border-left: 0;
+ border-right: 0;
+}
+
+
+
+
+.schweben{
+  display: flex;
+  align-items: center;
+  animation: einschweben 1s ease-out;
+}
+
+.schweben img {
+  margin-right: 20px;
+  animation: einschweben 1s ;
+}
+
+@keyframes einschweben {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+}
+
+
+
+    .menu-button {
+      border: none;
+      border-radius: 30px;
+      background-color: #A4A4A4;
+      color: black;
+      margin: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .menu-button:hover {
+      background-color:  #AC58FA;
+      color: black;
+    }
+
+    .menu-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(164, 164, 164, 0.8);
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .menu-content a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 5px;
+    }
+
+    .menu-content a:hover {
+      background-color:  #AC58FA;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .hover-menu:hover .menu-content {
+      display: block;
+    }
+    .centered-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust the margin-top as needed */
+}
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent; /* Breitere Linie */
+  border-right: 20px solid transparent; /* Breitere Linie */
+  border-bottom: 20px solid #8a2be2; /* Lila Farbe */
+  position: relative;
+  margin: 40px auto 0; /* Höherer Abstand zum oberen Rand */
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow-up:before {
+  content: "";
+  position: absolute;
+  top: -20px; /* Höherer Abstand zum oberen Rand */
+  left: -20px; /* Größerer Abstand zum linken Rand */
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent; /* Breitere Linie */
+  border-right: 20px solid transparent; /* Breitere Linie */
+  border-bottom: 20px solid #f5f5f5;
+}
+
+.arrow-up:hover {
+  transform: scale(1.1) translateY(-20px); /* Höherer Hover-Effekt */
+}
+
+
+    </style>
+  </head>
+
+  <body>
+    <script>
+    document.body.addEventListener("click", function(event) {
+       if (event.target.tagName === "A") {
+         return;
+       }
+
+       var bubble = document.createElement("div");
+       bubble.classList.add("bubble");
+       bubble.style.left = event.clientX - 25 + "px";
+       bubble.style.top = event.clientY - 25 + "px";
+       document.body.appendChild(bubble);
+
+       setTimeout(function() {
+         bubble.style.top = "0px";
+         setTimeout(function() {
+           bubble.remove();
+         }, 1200);
+       }, 0);
+     });
+    </script>
+    <div class="bg"></div>
+     <div class="content">
+    <h1>Trinkflaschen Vergleichsseite</h1>
+    <nav>
+      <ul>
+            <li><a href="page1.html" >Übersicht</a></li>
+      <li><a href="mach_den_Test.html" target="_self" alt="Mach den Test">Flaschenfinder</a></li>
+    <li><a href="Arten.html">Arten von Trinkflaschen</a></li>
+    <li><a href="Verwendungsarten.html">Verwendungsarten</a></li>
+
+        <li><a href="Nachhaltigkeit.html">Nachhaltigkeit</a></li>
+    <li><a href="kaufen.html" class="active">Kaufen</a></li>
+  </ul>
+</nav>
+<h2 contenteditable="true">bald Verfügbar</h2>
+<!--
+<div class="centered-button">
+<div class="hover-menu">
+  <button class="menu-button">Trinkflaschen</button>
+
+  <div class="menu-content">
+    <a id="flascheedel">Edelstahlflaschen</a>
+    <a id="flaschetritan">Tritanflaschen</a>
+    <a id="flascheglas">Glasflaschen</a>
+  </div>
+</div>
+</div>
+<script>
+document.getElementById('flascheedel').addEventListener('click', function() {
+    scrollToSection('Edelstahlflaschen');
+});
+
+document.getElementById('flaschetritan').addEventListener('click', function() {
+    scrollToSection('Tritanflaschen');
+});
+
+document.getElementById('flascheglas').addEventListener('click', function() {
+    scrollToSection('Glasflaschen');
+});
+
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+</script>
+<span id=Edelstahlflaschen><span id="arbeit">
+<h5 id="edelstahlhalbliterarbeit">Edel halb arbeit</h5>
+  <p>kdjöadkfjsöaljföaslfjasö</p>
+  <br><br><br><br><br>
+
+
+<h5 id="edelstahlliterarbeit">Edel liter arbeit</h5>
+<p>kdjöadkfjsöaljföaslfjasö</p>
+<br><br><br><br><br>
+
+<h5 id ="edelstahlmehrliterarbeit">edelstahl mehr arbeit</h5>
+<p>kdjöadkfjsöaljföaslfjasö</p>
+<br><br><br><br><br>
+
+
+
+<h5 id ="edelstahlhalblitersport">edelstahl halb sport<h5>
+  <p>kdjöadkfjsöaljföaslfjasö</p>
+  <br><br><br><br><br>
+
+
+
+
+
+  <h5 id ="edelstahllitersport">Edel liter sport</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+
+
+
+
+            <h5 id ="edelstahlmehrlitersport"> edelstahl mehrliter sport <h5>
+              <p>kdjöadkfjsöaljföaslfjasö</p>
+              <br><br><br><br><br>
+
+
+
+
+              <h5 id = "edelstahlhalbliterreisen"> edelstahl halb reisen</h5>
+              <p>kdjöadkfjsöaljföaslfjasö</p>
+              <br><br><br><br><br>
+
+
+
+
+
+                      <h5 id="edelstahlliterreisen">edelstahl liter reisen</h5>
+                      <p>kdjöadkfjsöaljföaslfjasö</p>
+                      <br><br><br><br><br>
+
+
+
+    <h5 id ="edelstahlmehrliterreisen">edel mehr reisen</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+    <span id="Tritanflaschen">
+    <h5 id ="tritanhalbliterarbeit">tritan halb arbeit</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+
+    <h5 id ="tritanliterarbeit">tritan liter arbeit</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+    <h5 id="tritanmehrliterarbeit"> tritan mehr arbeit</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+
+    <h5 id ="tritanhalblitersport"> tritan halb sport </h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+
+<span id="sport">
+    <h5 id ="tritanlitersport">tritan liter sport</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+
+    <h5 id ="tritanmehrlitersport">tritan mehr sport</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+
+<span id="reisen">
+      <h5 id="tritanhalbliterreisen">tritan halb reisen</h5>
+      <p>kdjöadkfjsöaljföaslfjasö</p>
+      <br><br><br><br><br>
+
+      <h5 id="tritanliterreisen">tritan liter reisen</h5>
+      <p>kdjöadkfjsöaljföaslfjasö</p>
+      <br><br><br><br><br>
+
+
+    <h5 id ="tritanmehrliterreisen">tritan mehr reisen </h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+
+    <span id="Glasflaschen">
+    <h5 id ="glashalbliterarbeit">glas halb arbeit</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+    <h5 id ="glasliterarbeit">glas liter arbeit</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+    <h5 id ="glasmehrliterarbeit">glas mehr arbeit</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+    <h5 id ="glashalblitersport">glas halb sport </h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+<h5 id="glaslitersport">glas liter sport </h5>
+<p>ladjhfaslkjfhasfjadlskfasdklfhas</p>
+<br><br><br><br>
+
+        <h5 id ="glasmehrlitersport">glas mehrliter sport <h5>
+          <p>kdjöadkfjsöaljföaslfjasö</p>
+          <br><br><br><br><br>
+
+    <h5 id ="glashalbliterreisen"> glas halb reisen</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+    <h5 id = "glasliterreisen">glas liter reisen</h5>
+    <p>kdjöadkfjsöaljföaslfjasö</p>
+    <br><br><br><br><br>
+
+
+
+      <h5 id="glasmehrliterreisen">glas mehr reisen</h5>
+      <p>kdjöadkfjsöaljföaslfjasö</p>
+      <br><br><br><br><br>
+
+
+
+<div class="arrow-up" onclick="scrollToTop()"></div>
+
+      <script>
+      function scrollToTop() { // JavaScript-Funktion hinzugefügt
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      }
+    </script>
+<br><br>
+<footer>
+-->
+
+<a href="Copyright.html">Copyright Informationen</a>
+<a href="Impressum.html">Impressum</a>
+</footer>
+
+  </body>
+</html>

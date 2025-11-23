@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trinkflaschen Vergleichsseite</title>
+    <meta name="description" content="Erfahre hier alles über die besten Trinkflaschen auf dem Markt und finde die perfekte Flasche für deine Bedürfnisse.">
+  <meta name="keywords" content="Trinkflasche, Vergleich, Empfehlung, Wasserflasche, Outdoor, Sport, Reisen">
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="Icon_Trinkflasche.png">
+    <style>
+    body {
+       font-family: Arial, sans-serif;
+       margin: 0;
+       padding-left: 8px;
+       background-color:       #E6E0F8;
+
+     }
+
+
+ h1 {
+   text-align: center;
+   font-size: 36px;
+   margin-top: 50px;
+   font-family: Georgia
+   ;
+ }
+
+ nav {
+   text-align: center;
+ }
+ nav a {
+   text-decoration: none;
+   color: black;
+   margin: 10px;
+ }
+
+ .container {
+   display: flex;
+ }
+ .container img {
+   width: 30%;
+   margin-right: 20px;
+   margin-bottom: 20px;
+ }
+
+ .info {
+   width: 70%;
+   padding-right:50px;
+ }
+
+ footer {
+   background-color: #f1f1f1;
+   text-align: center;
+   padding: 20px;
+ }
+ footer a {
+   color: black;
+   text-decoration: none;
+   margin: 0 10px;
+ }
+
+
+
+ nav {
+ display: flex;
+ justify-content: space-between;
+}
+nav li {
+ display: inline-block;
+}
+ nav a {
+   text-decoration: none;
+   color: black;
+   border: none;
+   border-radius: 18px;
+   margin: 10px;
+   padding: 10px;
+display: block;
+ }
+ nav a:hover {
+   color: black;
+     background-color: #A4A4A4;
+ }
+ nav a:hover::after {
+   content: "";
+   display: block;
+   border-bottom: 2px ;
+   width: 100%;
+
+ }
+ nav a.active::after {
+   content: "";
+   display: block;
+   border-bottom: 2px solid  #AC58FA;
+   width: 100%;
+    background-color: black;
+ }
+ nav a.active {
+background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+ nav ul {
+list-style: none;
+}
+
+
+.tabbed-nav {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.tabbed-nav a {
+    flex: 1;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 0;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    background-color: #f1f1f1;
+}
+
+.tabbed-nav a:hover {
+    background-color: #A4A4A4;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.tabbed-nav a.active {
+
+    background-color: #e0e0e0;
+    text-decoration: none;
+}
+
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+
+img {
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+
+
+
+}
+
+.bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #FAFAFA;
+  transition: all 1s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+animation: rise 0.2s linear;
+}
+
+@keyframes rise {
+from {
+transform: translateY(0);
+}
+to {
+transform: translateY(-100%);
+}
+}
+
+
+
+
+
+.speech-bubble {
+ position: relative;
+ padding: 15px;
+ margin-right: 15px;
+ margin-bottom: 15px;
+ background-color: #E2A9F3;
+ box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+ border-radius: 40px;
+}
+
+
+.speech-bubble::before {
+ content: "";
+ position: absolute;
+ bottom: 100%;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 0;
+ height: 0;
+ border: 10px solid white;
+ border-bottom-color: transparent;
+ border-top: 0;
+ border-left: 0;
+ border-right: 0;
+}
+
+
+
+
+.schweben{
+  display: flex;
+  align-items: center;
+  animation: einschweben 1s ease-out;
+}
+
+.schweben img {
+  margin-right: 20px;
+  animation: einschweben 1s;
+}
+
+@keyframes einschweben {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.circle{width: 140px;
+   height: 140px;
+object-fit: contain;
+   -moz-border-radius: 70px;
+   -webkit-border-radius: 70px;
+   border-radius: 70px;
+   transition: transform 1.0s ease , background-color 1.2s ease;
+
+}
+
+
+   .pictures{
+     margin-left: 200px;
+     margin-right: 200px;
+     display: flex;
+     justify-content: space-between;
+
+   }
+
+.circle:hover{
+  background-color: purple;
+cursor: pointer;
+transform: scale(1.1);
+}
+
+    </style>
+  </head>
+  <body>
+    <script>
+    document.body.addEventListener("click", function(event) {
+       if (event.target.tagName === "A") {
+         return;
+       }
+
+       var bubble = document.createElement("div");
+       bubble.classList.add("bubble");
+       bubble.style.left = event.clientX - 25 + "px";
+       bubble.style.top = event.clientY - 25 + "px";
+       document.body.appendChild(bubble);
+
+       setTimeout(function() {
+         bubble.style.top = "0px";
+         setTimeout(function() {
+           bubble.remove();
+         }, 1200);
+       }, 0);
+     });
+    </script>
+     <div class="content">
+    <h1>Trinkflaschen Vergleichsseite</h1>
+    <nav>
+      <ul>
+            <li><a href="page1.html" >Übersicht</a></li>
+      <li><a href="mach_den_Test.html" target="_self" alt="Mach den Test">Flaschenfinder</a></li>
+    <li><a href="Arten.html">Arten von Trinkflaschen</a></li>
+    <li><a href="Verwendungsarten.html" class="active">Verwendungsarten</a></li>
+
+        <li><a href="Nachhaltigkeit.html">Nachhaltigkeit</a></li>
+    <li><a href="kaufen.html">Kaufen</a></li>
+  </ul>
+</nav>
+
+<div class="pictures">
+<img class="circle" id="reisen_bild" style="object-fit: cover"src="Reisen_verwendung.jpg" alt=""> <img class="circle" style="object-fit: cover"id="sport_bild" src="Sport_verwendung.jpg"> <img class="circle" style="object-fit: cover;" id="arbeit_bild"  src="arbeit_bild.jpg">
+</div>
+<script>
+document.getElementById('reisen_bild').addEventListener('click', function() {
+        scrollToSection('reisen');
+    });
+
+    document.getElementById('sport_bild').addEventListener('click', function() {
+        scrollToSection('sport');
+    });
+
+    document.getElementById('arbeit_bild').addEventListener('click', function() {
+        scrollToSection('outdoor');
+    });
+
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+</script>
+<br><br><br>
+
+<div id="reisen" class="tab-content-active">
+<div class ="schweben">
+<div class="speech-bubble">
+    <h2>Reisen</h2>
+    <p>Hey Reisefreund,<br><br>
+
+du weißt sicherlich, wie wichtig es ist, immer Zugang zu sauberem und gesundem Wasser zu haben, besonders wenn du unterwegs bist. Leider kann es manchmal schwierig sein, dies auf Reisen sicherzustellen, insbesondere wenn man sich in Gebieten befindet, in denen das Wasser nicht vertrauenswürdig ist. Eine der besten Möglichkeiten, dieses Problem zu lösen, ist die Verwendung einer hochwertigen und zuverlässigen Trinkflasche.
+<br><br>
+Eine wiederverwendbare Trinkflasche aus Edelstahl oder Glas ist langlebig und leicht zu reinigen. Sie sind auch frei von schädlichen Chemikalien, die in Plastikflaschen enthalten sein können. Es gibt auch Trinkflaschen mit integrierten Filtersystemen, die es dir ermöglichen, Wasser aus natürlichen Quellen zu trinken. Dies kann besonders nützlich sein, wenn du in Gebieten unterwegs bist, in denen das Wasser nicht sicher ist.
+<br><br>
+Auf deinen Reisen möchtest du sicherlich auch deinen Beitrag zum Schutz der Umwelt leisten. Leider produzieren Plastikflaschen eine erhebliche Menge an Abfall, der oft nicht ordnungsgemäß entsorgt wird. Indem du eine wiederverwendbare Trinkflasche verwendest, trägst du dazu bei, die Menge an Plastikmüll zu reduzieren.
+<br><br>
+Ich empfehle dir, sorgfältig die verschiedenen Arten von Trinkflaschen zu untersuchen, die auf dem Markt erhältlich sind, und diejenige auszuwählen, die am besten zu deinen Bedürfnissen passt. Stelle sicher, dass sie leicht zu reinigen und langlebig ist. Auf diese Weise kannst du sicher sein, dass du immer Zugang zu sauberem und gesundem Wasser hast, während du gleichzeitig die Umwelt schützt.
+<br><br>
+Ich wünsche dir viel Erfolg bei der Suche nach der perfekten Trinkflasche für deine nächste Reise!
+<br><br>
+Herzliche Grüße</p>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div id="sport" class="tab-content-active">
+  <div class="schweben">
+    <div class="speech-bubble">
+    <h2>Sport</h2>
+    <p>Lieber Sportler,
+<br><br>
+du weißt sicherlich, wie wichtig es ist, auf deine Gesundheit und Fitness zu achten, insbesondere wenn du regelmäßig Sport treibst. Eine wichtige Komponente davon ist, ausreichend hydriert zu bleiben, um deine Leistungsfähigkeit zu maximieren und Verletzungen zu vermeiden. Eine der besten Möglichkeiten, dies zu erreichen, ist die Verwendung der richtigen Trinkflasche für deinen Sport.
+<br><br>
+Es gibt verschiedene Arten von Trinkflaschen, die für verschiedene Sportarten geeignet sind. Zum Beispiel gibt es Trinkflaschen mit einem Handschlaufe, die perfekt für Läufer und Wanderer sind, da sie leicht zu tragen sind und die Hände frei lassen. Es gibt auch Trinkflaschen, die speziell für Radfahrer entwickelt wurden, mit Halterungen, die an Rahmen oder Lenker befestigt werden können. Für alle Arten von Outdoor-Sportarten gibt es auch Trinkflaschen, die besonders robust und langlebig sind, um Stößen und Beschädigungen standhalten zu können.
+<br><br>
+Es gibt auch Trinkflaschen mit speziellen Funktionen, die für bestimmte Sportarten geeignet sind. Zum Beispiel gibt es Trinkflaschen mit integrierten Filtersystemen, die es ermöglichen, Wasser aus natürlichen Quellen zu trinken, was besonders nützlich sein kann, wenn man sich auf Wanderungen oder Campingausflügen befindet. Es gibt auch Trinkflaschen mit eingebauten Shaker-Systemen, die ideal für Personen sind, die Protein-Shakes oder andere ergänzende Getränke benötigen.
+<br><br>
+Ich empfehle dir, sorgfältig die verschiedenen Arten von Trinkflaschen zu untersuchen, die für deinen Sport geeignet sind und diejenige auszuwählen, die am besten zu deinen Bedürfnissen passt. Stelle sicher, dass sie leicht zu reinigen und langlebig ist. Auf diese Weise kannst du sicher sein, dass du immer ausreichend hydriert bist, um deine Leistungsfähigkeit zu maximieren und Verletzungen zu vermeiden.
+<br><br>
+Ich wünsche dir viel Erfolg bei der Suche nach der perfekten Trinkflasche für deinen Sport!
+<br><br>
+Herzliche Grüße </p>
+</div>
+</div>
+</div>
+
+<br><br><br>
+
+<div id="outdoor" class="tab-content-active">
+  <div class= "schweben">
+    <div class="speech-bubble">
+    <h2>Büro</h2>
+    <p>Lieber Büroangestellter,
+<br><br>
+du weißt sicherlich, wie wichtig es ist, auf deine Gesundheit und dein Wohlbefinden zu achten, insbesondere wenn du den ganzen Tag im Büro verbringst. Eine wichtige Komponente davon ist, ausreichend hydriert zu bleiben, um deine Leistungsfähigkeit zu maximieren und mögliche Gesundheitsprobleme zu vermeiden. Eine der besten Möglichkeiten, dies zu erreichen, ist die Verwendung der richtigen Trinkflasche für den Büroeinsatz.
+<br><br>
+Es gibt verschiedene Arten von Trinkflaschen, die für den Büroeinsatz geeignet sind. Zum Beispiel gibt es Trinkflaschen, die in die Gefrier- oder Kühlschranktür passen, ideal für Personen, die gerne kaltes Wasser trinken. Es gibt auch Trinkflaschen, die einfach zu reinigen sind, was für Personen, die viel unterwegs sind, von Vorteil ist. Es gibt auch Trinkflaschen, die aus hochwertigen und langlebigen Materialien hergestellt werden, die auch für den täglichen Gebrauch geeignet sind.
+<br><br>
+Es gibt auch Trinkflaschen mit speziellen Funktionen, die für den Büroeinsatz geeignet sind. Zum Beispiel gibt es Trinkflaschen mit Zeitmarkierungen, die daran erinnern, regelmäßig zu trinken, und Trinkflaschen mit zusätzlichen Fächern für Tabletts, um die Organisation zu verbessern.
+<br><br>
+Ich empfehle dir, sorgfältig die verschiedenen Arten von Trinkflaschen zu untersuchen, die für den Büroeinsatz geeignet sind und diejenige auszuwählen, die am besten zu deinen Bedürfnissen passt. Stelle sicher, dass sie leicht zu reinigen und langlebig ist. Auf diese Weise kannst du sicher sein, dass du immer ausreichend hydriert bist, um deine Leistungsfähigkeit zu maximieren und mögliche Gesundheitsprobleme zu vermeiden.
+<br><br>
+Ich wünsche dir viel Erfolg bei der Suche nach der perfekten Trinkflasche für deinen Büroeinsatz!
+<br><br>
+Herzliche Grüße</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+<footer>
+<a href="Copyright.html">Copyright Informationen</a>
+<a href="Impressum.html">Impressum</a>
+</footer>
+
+  </body>
+</html>

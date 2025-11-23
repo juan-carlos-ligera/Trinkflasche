@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trinkflaschen Vergleichsseite</title>
+    <meta name="description" content="Erfahre hier alles über die besten Trinkflaschen auf dem Markt und finde die perfekte Flasche für deine Bedürfnisse.">
+  <meta name="keywords" content="Trinkflasche, Vergleich, Empfehlung, Wasserflasche, Outdoor, Sport, Reisen">
+  <meta charset="UTF-8">
+ <meta name="viewport" content="initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="Icon_Trinkflasche.png">
+    <style>
+
+    * {
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+
+
+
+
+
+
+.header-container {
+                position:relative;
+            }
+    .con{
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 30px;
+
+    }
+            h2 {
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 5em;
+                color: purple;
+            }
+
+            h2:first-child {
+                color: transparent;
+                -webkit-text-stroke: 2px #AC58FA;
+
+            }
+
+            /* Animation */
+            h2:last-child {
+                color: #AC58FA;
+                animation: animate 4s ease-in-out infinite;
+            }
+
+            @keyframes animate {
+                0%, 100% {
+                    clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 840% 59%, 100% 52%, 100% 100%, 0% 100%);
+                }
+                50% {
+                    clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .question {
+      display: none;
+      text-align: center;
+      margin: 50px 0;
+    }
+
+    .question p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .answer {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.2s;
+    }
+
+    .answer:hover {
+      background-color: #A4A4A4;
+    }
+
+    .selected {
+      background-color: #AC58FA;
+      color: white;
+    }
+
+
+    button {
+      padding: 10px 20px;
+      background-color: #A4A4A4 ;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin: 20px;
+      width: 180px;
+    }
+
+    button:hover {
+      background-color:#AC58FA ;
+
+    }
+
+
+    .result-link {
+  display: block;
+  padding:  10px;
+  background-color: #AC58FA;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin: 20px auto;
+  border-radius: 5px;
+  width: 250px;
+  }
+
+
+    .result-text {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 24px;
+}
+
+
+
+
+.result-result{
+
+  color: purple
+}
+
+.result-material {
+
+}
+
+.result-material:hover {
+/* damit der Unterstrich dieselbe Farbe wie die Schrift hat */
+}
+
+
+
+
+
+.result-capacity {
+  color: #AC58FA;
+    font-weight: bold;
+}
+      body {
+         font-family: Arial, sans-serif;
+         background-color:       #E6E0F8;
+       }
+
+ h1 {
+   text-align: center;
+   font-size: 36px;
+   margin-top: 50px;
+   font-family: Georgia
+   ;
+ }
+
+ nav {
+   text-align: center;
+ }
+ nav a {
+   text-decoration: none;
+   color: black;
+   margin: 10px;
+ }
+
+ .container {
+   display: flex;
+ }
+ .container img {
+   width: 30%;
+   margin-right: 20px;
+   margin-bottom: 20px;
+ }
+
+ .info {
+   width: 70%;
+   padding-right:50px;
+ }
+
+ footer {
+   background-color: #f1f1f1;
+   text-align: center;
+   padding: 20px;
+ }
+ footer a {
+   color: black;
+   text-decoration: none;
+   margin: 0 10px;
+ }
+
+ nav {
+ display: flex;
+ justify-content: space-between;
+}
+nav li {
+ display: inline-block;
+}
+ nav a {
+   text-decoration: none;
+   color: black;
+   margin: 10px;
+   border: none;
+   border-radius: 18px;
+   padding: 10px;
+display: block;
+ }
+ nav a:hover {
+   color: black;
+     background-color: #A4A4A4;
+ }
+ nav a:hover::after {
+   content: "";
+   display: block;
+   border-bottom: 2px ;
+   width: 100%;
+
+ }
+ nav a.active::after {
+   content: "";
+   display: block;
+   border-bottom: 2px solid  #AC58FA;
+   width: 100%;
+
+ }
+ nav a.active {
+background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+ nav ul {
+list-style: none;
+}
+
+img {
+
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+
+}
+
+
+
+
+
+
+#progress-container {
+  width: 50%;
+  height: 30px;
+  background-color: lightgray;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+#progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #AC58FA;
+  border-radius: 5px;
+  transition: width 0.8s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+
+
+
+
+
+.bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #FAFAFA;
+  transition: all 1s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+animation: rise 0.2s linear;
+}
+
+@keyframes rise {
+from {
+transform: translateY(0);
+}
+to {
+transform: translateY(-100%);
+}
+}
+
+
+
+
+
+
+.speech-bubble {
+ position: relative;
+ padding: 15px;
+ margin-right: 15px;
+ margin-bottom: 15px;
+ background-color: #E2A9F3;
+ border-radius: 10px;
+ box-shadow: 20px 12px 12px rgba(0,0,0,0.15);
+}
+
+
+.speech-bubble::before {
+ content: "";
+ position: absolute;
+ bottom: 100%;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 0;
+ height: 0;
+ border: 10px solid white;
+ border-bottom-color: transparent;
+ border-top: 0;
+ border-left: 0;
+ border-right: 0;
+}
+
+
+.schweben{
+  display: flex;
+  align-items: center;
+  animation: einschweben 1s ease-out;
+}
+
+.schweben img {
+  margin-right: 20px;
+  animation: einschweben 1s;
+}
+
+@keyframes einschweben {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+    </style>
+  </head>
+  <body>
+      <h1>Trinkflaschen Vergleichsseite</h1>
+    <script>
+    document.body.addEventListener("click", function(event) {
+       if (event.target.tagName === "A") {
+         return;
+       }
+
+       var bubble = document.createElement("div");
+       bubble.classList.add("bubble");
+       bubble.style.left = event.clientX - 25 + "px";
+       bubble.style.top = event.clientY - 25 + "px";
+       document.body.appendChild(bubble);
+
+       setTimeout(function() {
+         bubble.style.top = "0px";
+         setTimeout(function() {
+           bubble.remove();
+         }, 1200);
+       }, 0);
+     });
+    </script>
+
+    <nav>
+      <ul>
+            <li><a href="page1.html" >Übersicht</a></li>
+      <li><a href="mach_den_Test.html" class="active" target="_self" alt="Mach den Test">Flaschenfinder</a></li>
+    <li><a href="Arten.html">Arten von Trinkflaschen</a></li>
+    <li><a href="Verwendungsarten.html">Verwendungsarten</a></li>
+
+        <li><a href="Nachhaltigkeit.html">Nachhaltigkeit</a></li>
+    <li><a href="kaufen.html">Kaufen</a></li>
+  </ul>
+</nav>
+
+<div id="progress-container">
+  <div id="progress-bar"></div>
+</div>
+
+
+<div class="question" id="question1">
+  <p>Welches Material bevorzugen Sie für Ihre Trinkflasche?</p>
+  <div class="answer" id="answer1-1" onclick="selectAnswer('answer1-1')">Edelstahl</div>
+  <div class="answer" id="answer1-2" onclick="selectAnswer('answer1-2')">Tritan</div>
+  <div class="answer" id="answer1-3" onclick="selectAnswer('answer1-3')">Glas</div>
+  <button id="fillbarbutton1" onclick="submitAnswer('question1')">Weiter</button>
+</div>
+
+
+<div class="question" id="question2">
+  <p>Wie viel Kapazität soll die Trinkflasche haben?</p>
+  <div class="answer" id="answer2-1" onclick="selectAnswer('answer2-1')">0,5 Liter</div>
+  <div class="answer" id="answer2-2" onclick="selectAnswer('answer2-2')">1 Liter</div>
+  <div class="answer" id="answer2-3" onclick="selectAnswer('answer2-3')">1,5 Liter</div>
+  <button id="fillbarbutton2" onclick="submitAnswer('question2')">Weiter</button>
+</div>
+
+
+<div class="question" id="question3">
+  <p>Wofür brauchen Sie die Trinkflasche?</p>
+  <div class="answer" id="answer3-1" onclick="selectAnswer('answer3-1')">Arbeit</div>
+  <div class="answer" id="answer3-2" onclick="selectAnswer('answer3-2')">Sport</div>
+    <div class="answer" id="answer3-3" onclick="selectAnswer('answer3-3')">Reisen</div>
+  <button id="fillbarbutton3" onclick="submitAnswer('question3')">Absenden</button>
+</div>
+<div id="result"></div>
+
+<script>
+  let selectedAnswers = {};
+
+   function selectAnswer(answerId) {
+     const answers = document.querySelectorAll(".answer");
+     for (const answer of answers) {
+       answer.classList.remove("selected");
+     }
+
+     const selectedAnswer = document.getElementById(answerId);
+     selectedAnswer.classList.add("selected");
+
+     const questionId = selectedAnswer.parentElement.id;
+     selectedAnswers[questionId] = selectedAnswer.innerHTML;
+   }
+
+   function submitAnswer(questionId) {
+     if (!selectedAnswers[questionId]) {
+       alert("Bitte wählen Sie eine Antwort aus");
+       return;
+     }
+
+     const currentQuestion = document.getElementById(questionId);
+     currentQuestion.style.display = "none";
+
+     let nextQuestionId = "question" + (parseInt(questionId.replace("question", "")) + 1);
+     const nextQuestion = document.getElementById(nextQuestionId);
+     if (nextQuestion) {
+       nextQuestion.style.display = "block";
+     } else {
+       let result = document.getElementById("result");
+       let material = selectedAnswers['question1'];
+       let capacity = selectedAnswers['question2'];
+       let activity = selectedAnswers['question3'];
+
+
+let textfuel;
+let textmach;
+       let textfürdie;
+let linkVerwendung;
+let linkMessage;
+       let linkText;
+       let linkUrlMaterial = "Arten.html";
+
+                     let linkUrland = "kaufen.html";
+       let linkClass = "result-link";
+     let linkUrlActivity = "Verwendungsarten.html";
+
+
+
+       if (material === "Tritan") {
+         linkText = "Trinkflaschen aus Tritan kaufen";
+         textfürdie = "tritan";
+         linkClass += " result-link-tritan";
+         linkUrlMaterial = "Arten.html#Tritanflaschen";
+       } else if (material === "Edelstahl") {
+         linkText = "Edelstahlflaschen kaufen";
+         textfürdie ="edelstahl";
+         linkClass += " result-link-stahl";
+         linkUrlMaterial = "Arten.html#Edelstahlflaschen";
+       } else if (material === "Glas") {
+         linkText = "Glasflaschen kaufen";
+         textfürdie ="glas";
+         linkClass += " result-link-glass";
+         linkUrlMaterial = "Arten.html#Glasflaschen";
+       }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       if (activity === "Arbeit") {
+         linkMessage = "die Arbeit";
+         textmach = "arbeit";
+         linkUrlActivity = "Verwendungsarten.html#outdoor";
+       } else if (activity === "Sport") {
+         textmach ="sport";
+         linkMessage = "den Sport";
+         linkUrlActivity = "Verwendungsarten.html#sport";
+       } else if (activity === "Reisen") {
+         linkMessage  = "das Reisen";
+         textmach="reisen";
+         linkUrlActivity = "Verwendungsarten.html#reisen";
+       }
+
+
+
+
+
+
+
+
+              if (activity=== "Arbeit") {
+                linkVerwendung = "Trinkflasche für die Arbeit kaufen";
+                linkUrland = "kaufen.html#arbeit";
+              } else if (activity === "Sport") {
+                linkVerwendung ="Trinkflsche für den Sport kaufen";
+                linkUrland = "kaufen.html#sport";
+              } else if (activity === "Reisen") {
+                linkVerwendung = "Trinkflasche für das Reisen kaufen";
+                linkUrland = "kaufen.html#reisen";
+              }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let linkUrlfuel = "kaufen.html";
+if (capacity === "0,5 Liter"){
+textfuel ="halbliter";}
+else if (capacity === "1 Liter"){
+  textfuel ="liter";
+}
+else if (capacity === "1,5 Liter"){
+  textfuel="mehrliter";
+}
+
+let linkUrlOther = "kaufen.html";
+if (material === "Edelstahl") {
+  linkUrlOther = "kaufen.html#Edelstahlflaschen";}
+  else if (material=== "Tritan"){
+  linkUrlOther= "kaufen.html#Tritanflaschen" ;
+  }
+  else if (material === "Glas"){
+    linkUrlOther="kaufen.html#Glasflaschen";
+  }
+
+
+
+
+
+       result.innerHTML = `
+         <div class="result-text">
+           Die Trinkflasche, die Sie suchen, ist aus <a href="${linkUrlMaterial}"><span class="result-material" style="color:#AC58FA;">${material}</span></a>,
+           kann <span class="result-capacity" style="color:#AC58FA;">${capacity}</span> Flüssigkeit beinhalten und soll für <a href="${linkUrlActivity}"><span class="result-material" style="color: #AC58FA;">${linkMessage}</span></a>
+            verwendet werden.
+         </div>
+
+
+         <a href="${linkUrlOther}" class="${linkClass}">${linkText}</a>
+         <a href ="${linkUrland}" class="${linkClass}">${linkVerwendung}</a>
+
+         <br>
+         <a href="kaufen.html#${textfürdie}${textfuel}${textmach}" >
+
+
+         <h1 style ="text-align: center; color: #AC58FA;">Diese Flaschen passen am besten zu Ihnen</h1></a>
+       `;
+     }
+   }
+document.getElementById("question1").style.display = "block";
+ const fillBarButton1 = document.getElementById("fillbarbutton1");
+ const fillbarbutton2 = document.getElementById("fillbarbutton2");
+ const fillbarbutton3 = document.getElementById("fillbarbutton3");
+ const progressBar = document.getElementById("progress-bar");
+
+
+ fillBarButton1.addEventListener("click", function() {
+if (selectedAnswers["question1"]) {
+progressBar.style.width = "33%";
+progressBar.style.backgroundColor=  "#AC58FA";
+} else { progressBar.style.width ="1%";
+progressBar.style.backgroundColor="red";}});
+
+
+
+   fillbarbutton2.addEventListener("click",function(){
+     if (selectedAnswers["question2"]){
+     progressBar.style.width = "66%";
+     progressBar.style.backgroundColor =  "#AC58FA";
+   }
+   else{progressBar.style.width = "33%";
+ progressBar.style.backgroundColor= "red";}});
+
+   fillbarbutton3.addEventListener("click",function(){
+if (selectedAnswers["question3"]){
+   progressBar.style.width ="100%";
+   progressBar.style.backgroundColor = 'purple';
+}
+
+else {progressBar.style.width = "66%";
+progressBar.style.backgroundColor ="red";}});
+
+
+
+
+
+
+</script>
+
+
+
+
+<footer>
+<a href="Copyright.html">Copyright Informationen</a>
+<a href="Impressum.html">Impressum</a>
+</footer>
+
+  </body>
+</html>

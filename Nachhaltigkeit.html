@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trinkflaschen Vergleichsseite</title>
+    <meta name="description" content="Erfahre hier alles über die besten Trinkflaschen auf dem Markt und finde die perfekte Flasche für deine Bedürfnisse.">
+  <meta name="keywords" content="Trinkflasche, Vergleich, Empfehlung, Wasserflasche, Outdoor, Sport, Reisen">
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="Icon_Trinkflasche.png">
+    <style>
+    body {
+       font-family: Arial, sans-serif;
+       margin: 0;
+       padding-left: 8px;
+       background-color:       #E6E0F8;
+
+     }
+
+
+
+ h1 {
+   text-align: center;
+   font-size: 36px;
+   margin-top: 50px;
+   font-family: Georgia
+   ;
+ }
+
+ nav {
+   text-align: center;
+ }
+ nav a {
+   text-decoration: none;
+   color: black;
+   margin: 10px;
+ }
+
+
+ .container {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
+ }
+
+ .container img {
+   width: 30%;
+   margin-right: 20px;
+   margin-bottom: 20px;
+ }
+
+ .container .info {
+   flex: 1 ;
+ }
+
+ @media (max-width: 600px) {
+   .container {
+     flex-direction: column;
+   }
+
+   .container img {
+     width: 100%;
+     margin-right: 0;
+   }
+
+   .container .info {
+     margin-top: 20px;
+   }
+ }
+
+
+
+ footer {
+   background-color: #f1f1f1;
+   text-align: center;
+   padding: 20px;
+ }
+ footer a {
+   color: black;
+   text-decoration: none;
+   margin: 0 10px;
+ }
+
+
+
+ nav {
+ display: flex;
+ justify-content: space-between;
+}
+nav li {
+ display: inline-block;
+}
+ nav a {
+   text-decoration: none;
+   color: black;
+   margin: 10px;
+   border: none;
+   border-radius: 18px;
+   padding: 10px;
+display: block;
+ }
+ nav a:hover {
+   color: black;
+     background-color: #A4A4A4;
+ }
+ nav a:hover::after {
+   content: "";
+   display: block;
+   border-bottom: 2px ;
+   width: 100%;
+
+ }
+ nav a.active::after {
+   content: "";
+   display: block;
+   border-bottom: 2px solid  #AC58FA;
+   width: 100%;
+    background-color: black;
+ }
+ nav a.active {
+background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+ nav ul {
+list-style: none;
+}
+
+
+img {
+
+--_g: 10% / 45% 45% no-repeat linear-gradient(#000 0 0);
+--m:
+left var(--_i, 0%) top var(--_g),
+bottom var(--_i, 0%) left var(--_g),
+top var(--_i, 0%) right var(--_g),
+right var(--_i, 0%) bottom var(--_g);
+
+-webkit-mask: var(--m);
+				mask:	var(--m);
+
+				filter: grayscale();
+				transition: .3s linear;
+				cursor: pointer;
+
+}
+
+img:hover{
+--_i:10%;
+filter: grayscale(0);
+
+}
+
+
+
+.schweben{
+  display: flex;
+  align-items: center;
+  animation: einschweben 1s ease-out;
+}
+
+.schweben img {
+  margin-right: 20px;
+  animation: einschweben 1s;
+}
+
+@keyframes einschweben {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+.bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #FAFAFA;
+  transition: all 1s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+animation: rise 0.2s linear;
+}
+
+@keyframes rise {
+from {
+transform: translateY(0);
+}
+to {
+transform: translateY(-100%);
+}
+}
+
+
+
+
+
+
+.speech-bubble {
+ position: relative;
+ padding: 15px;
+ margin-right: 15px;
+ margin-bottom: 15px;
+ background-color: #E2A9F3;
+ box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+ border-radius: 40px;
+}
+
+
+.speech-bubble::before {
+ content: "";
+ position: absolute;
+ bottom: 100%;
+ left: 50%;
+ transform: translateX(-50%);
+ width: 0;
+ height: 0;
+ border: 10px solid white;
+ border-bottom-color: transparent;
+ border-top: 0;
+ border-left: 0;
+ border-right: 0;
+}
+
+
+.info{
+  min-width: 300px;
+}
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <script>
+    document.body.addEventListener("click", function(event) {
+       if (event.target.tagName === "A") {
+         return;
+       }
+
+       var bubble = document.createElement("div");
+       bubble.classList.add("bubble");
+       bubble.style.left = event.clientX - 25 + "px";
+       bubble.style.top = event.clientY - 25 + "px";
+       document.body.appendChild(bubble);
+
+       setTimeout(function() {
+         bubble.style.top = "0px";
+         setTimeout(function() {
+           bubble.remove();
+         }, 1200);
+       }, 0);
+     });
+    </script>
+
+     <div class="content">
+    <h1>Trinkflaschen Vergleichsseite</h1>
+    <nav>
+      <ul>
+            <li><a href="page1.html" >Übersicht</a></li>
+      <li><a href="mach_den_Test.html" target="_self" alt="Mach den Test">Flaschenfinder</a></li>
+    <li><a href="Arten.html" >Arten von Trinkflaschen</a></li>
+    <li><a href="Verwendungsarten.html">Verwendungsarten</a></li>
+
+        <li><a href="Nachhaltigkeit.html" class="active">Nachhaltigkeit</a></li>
+    <li><a href="kaufen.html">Kaufen</a></li>
+  </ul>
+</nav>
+<div class="schweben">
+  <div class="speech-bubble">
+<div class="container">
+<img style="height: 300px; object-fit: cover; width:300px;" src="Umwelt.jpg">
+
+<div class="info">
+<p>Sind Sie auf der Suche nach einer praktischen und umweltfreundlichen Lösung für Ihre täglichen Getränkebedürfnisse? Dann sind wiederverwendbare Trinkflaschen genau das Richtige für Sie!
+<br><br>
+Einweg-Plastikflaschen haben negative Auswirkungen auf die Umwelt, benötigen viele Jahre zur Zersetzung und können gefährliche Substanzen freisetzen. Wiederverwendbare Flaschen hingegen können immer wieder verwendet werden und reduzieren somit den Bedarf an neuen Flaschen.
+<br><br>
+Wir bieten Ihnen eine große Auswahl an hochwertigen wiederverwendbaren Trinkflaschen in verschiedenen Größen, Farben und Designs. Investieren Sie in eine grünere Zukunft und machen Sie einen kleinen, aber bedeutenden Schritt für die Umwelt.
+<br><br>
+Entdecken Sie jetzt unsere große Auswahl an wiederverwendbaren Trinkflaschen!</p>
+</div></div>
+</div>
+</div>
+<footer>
+<a href="Copyright.html">Copyright Informationen</a>
+<a href="Impressum.html">Impressum</a>
+</footer>
+
+  </body>
+</html>
